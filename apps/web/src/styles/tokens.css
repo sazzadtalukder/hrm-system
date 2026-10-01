@@ -1,0 +1,11 @@
+:root {
+  color-scheme: light;
+  --color-app: #f8fafc;
+  --color-surface: #ffffff;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-border-subtle: #e2e8f0;
+  --color-accent: #1d4ed8;
+  --color-danger: #b91c1c;
+  --focus-ring: #2563eb;
+}

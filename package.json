@@ -1,0 +1,51 @@
+{
+  "name": "hrm-system",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24 <25",
+    "npm": ">=11"
+  },
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web -c blue,green \"npm run dev:api\" \"npm run dev:web\"",
+    "dev:api": "npm run dev --workspace @hrm/api",
+    "dev:web": "npm run dev --workspace @hrm/web",
+    "build": "npm run build --workspaces --if-present",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "db:migrate": "npm run db:migrate --workspace @hrm/api",
+    "db:rollback": "npm run db:rollback --workspace @hrm/api",
+    "db:status": "npm run db:status --workspace @hrm/api",
+    "db:seed": "npm run db:seed --workspace @hrm/api",
+    "db:bootstrap-admin": "npm run db:bootstrap-admin --workspace @hrm/api",
+    "db:reconcile-bootstrap-admin-scope": "npm run db:reconcile-bootstrap-admin-scope --workspace @hrm/api",
+    "db:bootstrap-organization": "npm run db:bootstrap-organization --workspace @hrm/api",
+    "db:reconcile-organization": "npm run db:reconcile-organization --workspace @hrm/api",
+    "verify:phase-1b": "npm run verify:phase-1b --workspace @hrm/api",
+    "verify:phase-2": "npm run verify:phase-2 --workspace @hrm/api",
+    "verify:phase-3": "npm run verify:phase-3 --workspace @hrm/api",
+    "verify:phase-4": "npm run verify:phase-4 --workspace @hrm/api",
+    "verify:phase-5": "npm run verify:phase-5 --workspace @hrm/api",
+    "verify:phase-6": "npm run verify:phase-6 --workspace @hrm/api",
+    "verify:phase-7": "npm run verify:phase-7 --workspace @hrm/api",
+    "verify:phase-8": "npm run verify:phase-8 --workspace @hrm/api",
+    "verify:phase-9": "npm run verify:phase-9 --workspace @hrm/api",
+    "verify:phase-10": "npm run verify:phase-10 --workspace @hrm/api",
+    "verify:phase-11": "npm run verify:phase-11 --workspace @hrm/api",
+    "verify:phase-12": "npm run verify:phase-12 --workspace @hrm/api"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "concurrently": "^10.0.4",
+    "eslint": "^10.8.1",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.4",
+    "globals": "^17.11.0",
+    "prettier": "^3.9.6"
+  }
+}
